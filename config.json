@@ -1,0 +1,52 @@
+{
+    "file_extensions": [
+        ".py",
+        ".js",
+        ".php",
+        ".java",
+        ".rb",
+        ".go",
+        ".cs",
+        ".cpp",
+        ".c",
+        ".sql"
+    ],
+    "exclude_patterns": [
+        "node_modules",
+        "venv",
+        ".git",
+        "__pycache__",
+        "build",
+        "dist"
+    ],
+    "max_file_size_mb": 10,
+    "severity_thresholds": {
+        "sql_injection": "high",
+        "xss": "high",
+        "command_injection": "critical",
+        "path_traversal": "high",
+        "insecure_deserialization": "critical",
+        "weak_crypto": "high",
+        "logic_flaws": "medium",
+        "security_misconfigs": "high",
+        "race_conditions": "high"
+    },
+    "custom_patterns": {
+        "sensitive_data": {
+            "patterns": [
+                "social_security",
+                "credit_card",
+                "bank_account"
+            ],
+            "severity": "critical"
+        },
+        "unsafe_file_operations": {
+            "patterns": [
+                "file_get_contents",
+                "readfile",
+                "fopen"
+            ],
+            "severity": "medium"
+        }
+    }
+} 
